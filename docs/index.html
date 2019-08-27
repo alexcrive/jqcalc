@@ -1,110 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>09 - Учим jQuery</title>
-	<link rel="stylesheet" href="css/normalize.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Titles -->
+	<title>Калькулятор цены</title>
+	<meta name="keywords" content="Ключевые слова...">
+    <meta name="description" content="Описание страницы...">
+
+	<!-- Styles -->
 	<link rel="stylesheet" href="css/main.css">
+
+	<!-- FavIcons -->
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	    <![endif]-->
 </head>
 <body>
+	<!--[if lt IE 8]>
+	    <p class="browserupgrade">Вы используете <strong>устаревшую</strong> версию браузера. Пожалуйста <a href="http://browsehappy.com/">обновите свой браузер</a>.</p>
+	<![endif]-->
 
+	<!-- Здесь пишем код -->
 
-<a href="http://webcademy.ru" target="_blank">
-<img src="http://webcademy.ru/img/logo/logo.svg" alt="Логотип" class="logo">
-</a>
-
-
-<div id="imgHolder" class="imgHolder">
-	<img src="img/black.png" alt="Автомобиль">
-	
-	<div class="model-summary">
-		<div class="model-name">Hundai Solaris</div>
-		<div class="model-specs" id="modelSpecs"></div>
-		<div class="model-price" id="modelPrice"></div>
-		<div class="model-price" id="modelPriceUSD"></div>
-		<div class="button">Заказать</div>
-	</div>
-	
-</div>
-
-<form id="autoForm">
-	<h2>Настрой авто для себя</h2>
-	<div class="row">
-		<!-- col-1-of-3 -->
-		<div class="col-1-of-3">
-			<h4>Двигатель</h4>
-			<div class="form-block">
-				<input type="radio" name="engine" id="engine1400" value="624900" checked>
-				<label for="engine1400">1.4 л (100 л.с.)</label>
+	<div class="img-product">
+		<img src="img/blue.jpg" alt="blue">
+		
+		<div class="product-content">
+			<div class="product-name">
+				ASICS / Кроссовки GT-1000 7
 			</div>
-			<div class="form-block">
-				<input type="radio" name="engine" id="engine1600" value="749900">
-				<label for="engine1600">1.6 л (123 л.с.)</label>
-			</div>
-		</div>
-		<!-- // col-1-of-3 -->
-		<!-- col-1-of-3 -->
-		<div class="col-1-of-3">
-			<h4>Коробка передач</h4>
-
-			<div class="form-block">
-				<input type="radio" name="transmission" id="transmission6MT" value="0" checked>
-				<label for="transmission6MT">Ручная, 6 ступеней (6 MT)</label>
+			<div class="product-params">
+				Страна бренда - Япония; 
+				Страна производитель - Вьетнам; 
+				Пол - Мужской; 
+				Материал подошвы обуви - резина; 
 			</div>
 
-			<div class="form-block">
-				<input type="radio" name="transmission" id="transmission6AT" value="125000">
-				<label for="transmission6AT">Автомат, 6 ступеней (6 AT)</label>
+			<h2>Количество товара:</h2>
+
+			<div class="product-count">
 			</div>
-		</div>
-		<!-- // col-1-of-3 -->
-		<!-- col-1-of-3 -->
-		<div class="col-1-of-3">
-			<h4>Пакет (дополнительные опции)</h4>
 
-			<div class="form-block">
-				<input type="radio" name="package" id="packageActive" value="0" checked>
-				<label for="packageActive">Active</label>
+			<h2>Способ доставки:</h2>
+
+			<div class="product-delivery">
 			</div>
-			<div class="form-block">
-				<input type="radio" name="package" id="packageActivePlus" value="85000">
-				<label for="packageActivePlus">Active Plus (кондиционер)</label>
+			<h2>Цена (рубли):</h2>
+			<div class="product-price" id="productPrice">
 			</div>
-			<div class="form-block">
-				<input type="radio" name="package" id="packageComfort" value="130000">
-				<label for="packageComfort">Comfort (климатконтроль)</label>
+			<h2>Цена ($):</h2>
+			<div class="product-price" id="productPriceUSD">
 			</div>
-		</div>
-		<!-- // col-1-of-3 -->
-	</div>
-
-	
-
-	
-
-	
-
-	<h4>Цвет</h4>
-	<div class="form-block">
-		<div id="colorsSelector" class="colorsSelector">
-			<div class="colorItem colorBlue" data-img-path="img/blue.png"></div>
-			<div class="colorItem colorWhite"  data-img-path="img/white.png"></div>
-			<div class="colorItem colorRed"  data-img-path="img/red.png"></div>
-			<div class="colorItem colorBlack"  data-img-path="img/black.png"></div>
-			<div class="colorItem colorWhitePure"  data-img-path="img/white-pure.png"></div>
-			<div class="colorItem colorOrange"  data-img-path="img/orange.png"></div>
-			<div class="colorItem colorGraphite"  data-img-path="img/graphite.png"></div>
 		</div>
 	</div>
 
-</form>
+	<form id="formCalc">
+		<div class="cols">
+
+			<h1>Количество товара:</h1>
+			<div class="form-block">
+				<input type="radio" name="productCount" id="count1" value="8065" checked>
+				<label for="count1">1</label>
+			</div>
+			<div class="form-block">
+				<input type="radio" name="productCount" id="count2" value="16130">
+				<label for="count2">2</label>
+			</div>
+			<div class="form-block">
+				<input type="radio" name="productCount" id="count3" value="24195">
+				<label for="count3">3</label>
+			</div>
+			<div class="form-block">
+				<input type="radio" name="productCount" id="count4" value="32260">
+				<label for="count4">4</label>
+			</div>
+
+		</div>
+		<div class="cols">
+		<h1>Способ доставки</h1>
+			<div class="form-block">
+				<input type="radio" name="delivery" id="pickup" value="0" checked>
+				<label for="pickup">Самовывоз</label>
+			</div>
+
+			<div class="form-block">
+				<input type="radio" name="delivery" id="post-office" value="750">
+				<label for="post-office">Доставка почтой</label>
+			</div>
+			<div class="form-block">
+				<input type="radio" name="delivery" id="courier" value="1000">
+				<label for="courier">Товар доставит курьер</label>
+			</div>
+			<div class="form-block">
+				<input type="radio" name="delivery" id="plane" value="1550">
+				<label for="plane">Доставка самолётом</label>
+			</div>
+		</div>
+
+		<h2>Цвет</h2>
+		<div id="colorSelector" class="colorSelector">
+			<div class="colorItem colorBlue" data-img-path="img/blue.jpg"></div>
+			<div class="colorItem colorDarkBlue"  data-img-path="img/dark-blue.jpg"></div>
+			<div class="colorItem colorRed"  data-img-path="img/red.jpg"></div>
+			<div class="colorItem colorWhite"  data-img-path="img/white.jpg"></div>
+			<div class="colorItem colorGray"  data-img-path="img/gray.jpg"></div>
+			<div class="colorItem colorGreen"  data-img-path="img/green.jpg"></div>
+		</div>
+	</form>
 
 
 
 
-<script src="libs/jquery/jquery-3.2.1.min.js"></script>
-<script src="libs/jQuery-currency/money.jquery.js"></script>
-<script src="js/main.js"></script>
+	<script src="libs/jquery/jquery-3.4.1.min.js"></script>
+
 	
+	<script src="js/main.js"></script>
+
 </body>
 </html>
