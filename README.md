@@ -1,3 +1,3 @@
 # jqcalc
 
-##jQuery Calculator of price
+## jQuery Calculator of price
